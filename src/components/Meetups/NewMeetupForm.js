@@ -38,20 +38,20 @@ const NewMeetupForm = (props) => {
             <form className={classes.form} onSubmit={handleSubmit}>
                 <div className={classes.control}>
                     <label htmlFor="title">Meetup Title</label>
-                    <input type="text" required id='title' ref={titleInputRef} />
+                    <input type="text" required id='title' ref={titleInputRef} autoComplete='off' />
                 </div>
 
 
 
                 <div className={classes.control}>
                     <label htmlFor="image">Meetup Image</label>
-                    <input type="url" required id='image' ref={imageInputRef} />
+                    <input type="url" required id='image' ref={imageInputRef} autoComplete='off' />
                 </div>
 
 
                 <div className={classes.control}>
                     <label htmlFor="address">Address</label>
-                    <input type="text" required id='address' ref={addressInputRef} />
+                    <input type="text" required id='address' ref={addressInputRef} autoComplete='off' />
                 </div>
 
                 <div className={classes.control}>
