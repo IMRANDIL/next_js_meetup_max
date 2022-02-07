@@ -1,13 +1,19 @@
+//Context Api.....decoded...
+
+
 import { createContext, useState } from "react";
 
 
 const FavoritesContext = createContext({
     favourites: [],
-    totalFavourites: 0
+    totalFavourites: 0,
+    addFav: (favoriteMeetup) => { },
+    removeFav: (meetupId) => { },
+    isFav: (meetupId) => { }
 });
 
 
-function FavoritesContextProvider(props) {
+export function FavoritesContextProvider(props) {
     const [userFav, setUserFav] = useState([]);
 
 
@@ -33,12 +39,18 @@ function FavoritesContextProvider(props) {
 
     const context = {
         favourites: userFav,
-        totalFavourites: userFav.length
+        totalFavourites: userFav.length,
+        addFav: addFavHandler,
+        removeFav: removeFavHandler,
+        isFav: itemIsFavHandler
     };
 
 
 
-    return <FavoritesContextProvider value={context}>
+    return <FavoritesContext.Provider value={context}>
         {props.children}
-    </FavoritesContextProvider>
+    </FavoritesContext.Provider>
 }
+
+
+export default FavoritesContext
