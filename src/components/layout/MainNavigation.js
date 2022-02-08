@@ -16,7 +16,9 @@ const MainNavigation = () => {
                 <ul>
                     <li><Link to='/'>All Meetups</Link></li>
                     <li><Link to='/new-meetup'>Add New Meetup</Link></li>
-                    <li><Link to='/favourites'>Favourite Meetups</Link></li>
+                    <li><Link to='/favourites'>Favourite Meetups
+                        <span className={classes.badge}>{favouriteCtx.totalFavourites}</span>
+                    </Link></li>
                 </ul>
             </nav>
         </header>
